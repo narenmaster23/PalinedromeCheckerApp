@@ -3,14 +3,26 @@ public class PalinedromeCheckerApp {
 
     public static void main(String[] args) {
 
-        // Hardcoded string
-        String word = "madam";
+        Scanner scanner = new Scanner(System.in);
 
-        // Check if the string is a palindrome
-        if (word.equals("madam")) {
-            System.out.println("The word " + word + " is a Palindrome.");
-        } else {
-            System.out.println("The word " + word + " is NOT a Palindrome.");
+        // Take input from user
+        System.out.print("Enter a string: ");
+        String original = scanner.nextLine();
+
+        String reversed = "";
+
+        // Reverse the string using for loop
+        for (int i = original.length() - 1; i >= 0; i--) {
+            reversed = reversed + original.charAt(i);
         }
+
+        // Compare original and reversed string
+        if (original.equals(reversed)) {
+            System.out.println("The string is a Palindrome.");
+        } else {
+            System.out.println("The string is NOT a Palindrome.");
+        }
+
+        scanner.close();
     }
 }
